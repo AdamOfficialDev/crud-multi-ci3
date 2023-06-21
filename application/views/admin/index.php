@@ -1,0 +1,1 @@
+<h1>Welcome <?= $this->session->userdata['role'] ?></h1>
