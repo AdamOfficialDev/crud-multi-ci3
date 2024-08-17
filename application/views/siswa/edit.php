@@ -13,13 +13,19 @@
                 </div>
                 <div class="form-group">
                     <label for="kelas">Kelas</label>
-                    <input type="text" class="form-control" id="kelas" name="kelas" value="<?= $siswa['kelas'] ?>">
-                    <small class="text-danger font-italic"><?= form_error('kelas') ?></small>
+                    <select class="form-control" id="kelas" name="kelas">
+                        <?php foreach ($kelas as $c) : ?>
+                            <option <?= $siswa['kelas'] == $c ? 'selected' : '' ?>><?= $c; ?></option>
+                        <?php endforeach; ?>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label for="jurusan">jurusan</label>
-                    <input type="text" class="form-control" id="jurusan" name="jurusan" value="<?= $siswa['jurusan'] ?>">
-                    <small class="text-danger font-italic"><?= form_error('jurusan') ?></small>
+                    <label for="jurusan">Jurusan</label>
+                    <select class="form-control" id="jurusan" name="jurusan">
+                        <?php foreach ($jurusan as $major) : ?>
+                            <option <?= $siswa['jurusan'] == $major ? 'selected' : '' ?>><?= $major; ?></option>
+                        <?php endforeach; ?>
+                    </select>
                 </div>
                 <button type=" submit" class="btn btn-primary">Update</button>
             </form>

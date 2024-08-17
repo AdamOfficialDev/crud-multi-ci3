@@ -60,8 +60,8 @@ class Siswa extends CI_Controller
 
         if ($this->form_validation->run() == false) {
             $data['title'] = 'Edit Data Siswa';
-            // $data['kelas'] = ['X', 'XI', 'XII'];
-            // $data['jurusan'] = ['RPL', 'TKJ', 'FARMASI', 'ANKIM', 'PERAWAT'];
+            $data['kelas'] = ['X', 'XI', 'XII'];
+            $data['jurusan'] = ['RPL', 'TKJ', 'FARMASI', 'ANKIM', 'PERAWAT'];
             $data['siswa'] = $this->Siswa_m->getId($id);
 
             $this->load->view('template/header', $data);
